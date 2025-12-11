@@ -15,8 +15,8 @@
         }
         canvas {
             display: block;
-            width: 320px;
-            height: 480px;
+            width: 100%;
+            height: 100vh;
             margin: 0 auto;
             border: 4px solid #333;
             image-rendering: pixelated;
@@ -78,8 +78,18 @@ if (tg.ready) tg.ready();
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
-canvas.width = 320;
-canvas.height = 480;
+
+// базовая логика в 320x480
+const LOGICAL_WIDTH = 320;
+const LOGICAL_HEIGHT = 480;
+
+// учитываем плотность пикселей экрана
+const dpr = window.devicePixelRatio || 1;
+canvas.width = LOGICAL_WIDTH * dpr;
+canvas.height = LOGICAL_HEIGHT * dpr;
+canvas.style.width = LOGICAL_WIDTH + "px";
+canvas.style.height = LOGICAL_HEIGHT + "px";
+ctx.scale(dpr, dpr);
 ctx.imageSmoothingEnabled = false;
 
 // логотип "Главный Мост" в углу

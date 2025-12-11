@@ -14,13 +14,13 @@
             font-family: "Courier New", monospace;
         }
         canvas {
-    display: block;
-    width: 320px;
-    height: 480px;
-    margin: 0 auto;
-    border: 4px solid #333;
-    image-rendering: pixelated;
-}
+            display: block;
+            width: 320px;
+            height: 480px;
+            margin: 0 auto;
+            border: 4px solid #333;
+            image-rendering: pixelated;
+        }
         #ui {
             position: absolute;
             top: 16px;
@@ -350,9 +350,10 @@ function draw() {
     }
 
     if (logoReady) {
-    const w = 48;
-    const h = 48;
-    ctx.drawImage(logoImg, canvas.width - w - 6, 6, w, h);
+        const w = 48;
+        const h = 48;
+        ctx.drawImage(logoImg, canvas.width - w - 8, 8, w, h);
+    }
 }
 
 loop();

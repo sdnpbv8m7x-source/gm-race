@@ -330,9 +330,8 @@ function draw() {
     }
 
     if (logoReady) {
-        const w = 48;
-        const h = 48;
-        ctx.drawImage(logoImg, LOGICAL_WIDTH - w - 8, 8, w, h);
+        const size = 44; // квадрат 44×44, подбери по вкусу
+        ctx.drawImage(logoImg, LOGICAL_WIDTH - size - 10, 10, size, size);
     }
 }
 
